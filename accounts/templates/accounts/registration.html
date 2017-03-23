@@ -1,0 +1,25 @@
+{% extends 'base_dos.html'%}
+
+{% block title %}
+	Registrate
+{% endblock title %}
+
+{% block links %}
+	<style type="text/css">
+		.logi-form{
+			text-align: center;
+		}
+	</style>
+{% endblock links %}
+
+{% block content %}
+	<div class="logi-form container">
+		<h2>Usuario Nuevo</h2>
+		<form action="." method="post" enctype='multipart/form-data'>
+			{% csrf_token %}
+			{{ form.as_p }}
+			{{ form_user.as_p }}
+			<input type="submit" value="Crear Usuario">	
+		</form>
+	</div>
+{% endblock content %}

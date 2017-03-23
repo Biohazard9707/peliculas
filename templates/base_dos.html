@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>
+		{% block title %}
+			Inicio
+		{% endblock%}
+	</title>
+	{% block links %}
+	{% endblock links %}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/skeleton.css' %}">
+
+</head>
+<body>
+	{% block content %}
+		
+	{% endblock content %}
+</body>
+</html>

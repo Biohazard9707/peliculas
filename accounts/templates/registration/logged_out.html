@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	Sesion Finalizada
+{% endblock title %}
+
+{% block content %}
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 col-md-12 text-center">
+				<div class="jumbotron">
+				<div class="container">
+					<h1>Tu sesión se ha cerrado con exito</h1>
+					<h4><p>Pero puedes volver a entrar aqui:</p>
+					<p><a href="{% url 'accounts:login'%}" class="btn btn-success btn-lg">Entrar</a></p></h4>
+
+				</div>
+				</div>
+			</div>
+		</div>
+	</div> 	
+{% endblock content %}
