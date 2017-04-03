@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'main',
     'catalogo',
     'social.apps.django_app.default',
+    'taggit',
 ]
 
 MIDDLEWARE = [
@@ -138,3 +139,9 @@ SOCIAL_AUTH_TWITTER_KEY = 'Bb2Q6KsShPIp4YSjlm6UEZmEm'
 SOCIAL_AUTH_TWITTER_SECRET = 'UZDBgKfXbX6GaAu25IhRkgKm3bp2sKkaGLVFIHBHdQPtlUoWAw'
 
 SOCIAL_AUTH_FACEBOOK_SCOPE= ['email']
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'hugo.enscruz@gmail.com'
+EMAIL_HOST_PASSWORD = 'alucard::9412'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True

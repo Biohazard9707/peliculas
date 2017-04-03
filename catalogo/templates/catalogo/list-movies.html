@@ -24,6 +24,9 @@
 				<div class="container-fluid">
 					<div class="row">
 						<h3 class="text-center">
+							{% if tag %}
+								<h4>Peliculas etiquetadas con: "{{ tag.name }}"</h4>
+							{% endif %}
 							{% if category %}
 								Peliculas de {{ category.name }}
 							{% else %}
@@ -34,15 +37,26 @@
 							<div class="col-sm-12 col-md-4">
 							<a href="{{ movie.get_absolute_url }}" class="thumnail">
 								<p>
-									<img src="{{ movie.image.url }}">
+									<img src="{{ movie.image.url }}"class="img img-responsive">
 								</p>
 								<p>
 									<h3>{{ movie.name }}</h3>
 								</p>
-								<br>
-								<br>
-								<br>
+								<p><small>
+									Tags:
+									{% for tag in movie.tags.all %}
+										<a href="{% url 'catalogo:movie_by_tag' tag.slug%}">
+											{{ tag.name }}
+										</a>
+										{% if not forloop.last %}
+											,
+										{% endif %}
+									{% endfor %}
+								</small></p>
 							</a>
+								<br>
+								<br>
+								<br>
 							</div>
 						{% endfor %}
 					</div>

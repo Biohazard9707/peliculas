@@ -1,21 +1,68 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block title %}
 	{{ movie.name }}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/skeleton.css' %}">
 {% endblock title %}
 
 {% block content %}
-	<h1>{{ movie.name }}</h1>
-	<p>
-		<img src="{{ movie.image.url }}">
-	</p>
-	<p>
-		{{ movie.description }}
-	</p>
-	<p>
-		Duración: {{ movie.runtime }}
-	</p>
-	<p>Año: {{ movie.year }}</p>
-	<p>Formato: {{ movie.formatt }}</p>	
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12" >
+				<h1 class="text-center">{{ movie.name }}</h1>
+				<div clas="">
+					<img src="{{ movie.image.url }}" class="img img-responsive">
+				</div>
+				<br>
+				<p class="text-justify">
+					{{ movie.description }}
+				</p>
+				<br>
+				<div class="text-left">
+					<p>
+						<strong>Duración:</strong> {{ movie.runtime }}
+					</p>
+					<p><strong>Año:</strong> {{ movie.year }}</p>
+					<p><strong>Formato:</strong> {{ movie.formatt }}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+			<h3 class="text-center">Comentarios</h3>
+				{% for comment in comments %}
+					<cite>
+						<small>Comentado por: {{ comment.user_comment.username }}</small>
+					</cite>
+					<p>
+						Fecha: {{ comment.datee }}
+					</p>
+					<p class="text-justify">
+						{{ comment.body }}
+					</p>
+					<hr>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+	<hr>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+			<div class="text-left container">
+				<h3 class="text-center">Comentarios</h3>
+				<form action="." method="post">
+					{% csrf_token %}
+					{{ form.as_p }}
+					<p>
+						<input type="submit" name="" value="Comentar">
+					</p>
+				</form>
+			</div>
+			</div>
+		</div>
+	</div>
 		
 {% endblock %}

@@ -25,6 +25,7 @@
 
 	<!-- Optional theme -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+	
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </head>
@@ -45,6 +46,7 @@
 	    <!-- Collect the nav links, forms, and other content for toggling -->
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	      <ul class="nav navbar-nav navbar-right">
+	      	<li><a href="{% url 'catalogo:registry-movie' %}">Subir Movie</a></li>
 	      	{% if request.user.is_authenticated %}
 	        	<li><a href="{% url 'accounts:logout' %}">Cerrar Sesión</a></li>
 	        	<li><a href="{% url 'accounts:profile' %}">Mi Perfil</a></li>
