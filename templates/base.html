@@ -46,6 +46,7 @@
 	    <!-- Collect the nav links, forms, and other content for toggling -->
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	      <ul class="nav navbar-nav navbar-right">
+	      	<li><a href="{% url 'catalogo:list-movies' %}">Peliculas</a></li>
 	      	<li><a href="{% url 'catalogo:registry-movie' %}">Subir Movie</a></li>
 	      	{% if request.user.is_authenticated %}
 	        	<li><a href="{% url 'accounts:logout' %}">Cerrar Sesión</a></li>

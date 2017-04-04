@@ -34,6 +34,7 @@ class Movie(models.Model):
 	formatt = models.CharField(max_length=15)
 	# date = models.DateTimeField(auto_now_add=True)
 	tags = TaggableManager()
+	fecha = models.DateTimeField(auto_now = True, blank = True, null = True)
 
 	class Meta:
 		ordering=('name',)

@@ -1,0 +1,7 @@
+<ul class="list-group">
+	{% for mov in ultimates_movies %}
+		<li class="list-group-item">
+			<a href="{{ mov.get_absolute_url }}">{{ mov.name }}</a>
+		</li>		
+	{% endfor %}
+</ul>

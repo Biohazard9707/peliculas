@@ -8,7 +8,7 @@ class CategoryAdmin(admin.ModelAdmin):
 	prepopulated_fields = {'slug':('name',),}
 
 class MovieAdmin(admin.ModelAdmin):
-	list_display = ['name', 'slug', 'year', 'formatt']
+	list_display = ['name', 'slug', 'year', 'formatt', 'fecha']
 	prepopulated_fields = {'slug':('name',),}
 
 admin.site.register(Category, CategoryAdmin)
